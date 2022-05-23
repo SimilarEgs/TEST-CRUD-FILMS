@@ -87,7 +87,6 @@ func createMovie(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-	//setting move id
 	movie.ID = strconv.Itoa(rand.Int())
 	movies = append(movies, movie)
 	json.NewEncoder(w).Encode(movie)
